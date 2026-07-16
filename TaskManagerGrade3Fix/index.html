@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=task_alt"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <span class="material-symbols-outlined"> task_alt </span>Task Manager
+      </h1>
+
+      <div id="clock" class="clock"></div>
+
+      <section class="task-form">
+        <h2>Add New Task</h2>
+
+        <form id="taskForm">
+          <input type="text" id="title" placeholder="Task Title" required />
+
+          <textarea
+            id="description"
+            placeholder="Task Description"
+            rows="4"
+          ></textarea>
+
+          <input type="date" id="dueDate" />
+
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+
+      <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search tasks..." />
+      </section>
+
+      <section class="controls">
+        <div>
+          <label for="filter">Filter:</label>
+
+          <select id="filter">
+            <option value="all">All</option>
+
+            <option value="completed">Completed</option>
+
+            <option value="pending">Pending</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="sort">Sort:</label>
+
+          <select id="sort">
+            <option value="newest">Newest</option>
+
+            <option value="oldest">Oldest</option>
+
+            <option value="az">A-Z</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="stats">
+        <p>
+          Total Tasks:
+          <span id="taskCount">0</span>
+        </p>
+      </section>
+
+      <section>
+        <div id="taskList" class="task-list"></div>
+      </section>
+      <section class="api-section">
+        <h2>Tasks From API</h2>
+
+        <button id="loadApiTasks">Load API Tasks</button>
+
+        <div id="apiTaskList" class="task-list"></div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
